@@ -1,7 +1,12 @@
 <template>
   <ul class="container">
     <li v-for="item in items" :key="item.message">
-      <app-message :msg="item.message"></app-message>
+      Outsider: {{ item.message }}
+      <app-message
+        :msg="item.message"
+        @messageChanged="item.message = $event"
+      ></app-message>
+      <hr />
     </li>
   </ul>
 </template>
