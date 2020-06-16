@@ -1,22 +1,24 @@
-// App.vue
-
-<template lang="pug">
-  .container Hello {{bundler}}
+<template>
+  <ul class="container">
+    <li v-for="item in items" :key="item.message">
+      {{ item.message }}
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({
+export default {
   data() {
     return {
-      bundler: "Parcel",
+      items: [{ message: "Foo" }, { message: "Bar" }],
     };
   },
-});
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .container {
   color: green;
 }
