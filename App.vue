@@ -18,7 +18,7 @@ import Message from "./components/Message.vue";
 export default {
   data() {
     return {
-      items: [{ message: "Foo" }, { message: "Bar" }],
+      items: this.$store.state.items,
     };
   },
   filters: {
